@@ -1,0 +1,9 @@
+name: NameGuard
+version: $version
+author: envizar
+
+api-version: '1.21'
+main: cc.dstm.nameGuard.MainImpl
+
+libraries:
+  - "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"

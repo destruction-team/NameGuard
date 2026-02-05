@@ -1,0 +1,12 @@
+name: NameGuard
+version: $version
+main: cc.dstm.nameGuard.MainImpl
+author: envizar
+
+libraries:
+  - "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+
+commands:
+  nameguard:
+    description: For config reloading
+    aliases: [ng]
