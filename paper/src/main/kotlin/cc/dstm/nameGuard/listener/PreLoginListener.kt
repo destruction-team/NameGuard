@@ -12,8 +12,6 @@ class PreLoginListener(private val plugin: MainImpl) : Listener {
     @EventHandler
     fun onAsyncPlayerPreLogin(event: AsyncPlayerPreLoginEvent) {
 
-        plugin.blockedConfig.groups.forEach { println(it.nicknames.joinToString(" ")) }
-
         val connectionContext = ConnectionContext(
             event.name,
             event.address,
