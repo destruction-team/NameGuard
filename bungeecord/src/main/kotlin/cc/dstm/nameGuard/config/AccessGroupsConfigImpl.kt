@@ -32,7 +32,7 @@ class AccessGroupsConfigImpl(plugin: MainImpl) :
                 match = groupSection.getSection("match").let { AccessGroup.Match(
                     everything = it.getBoolean("everything", false),
                     nicknames = it.getStringList("nicknames"),
-                    patterns = it.getStringList("patterns").map { pattern -> Regex(pattern) }
+                    patterns = it.getStringList("patterns").map { pattern -> Regex(pattern, RegexOption.IGNORE_CASE) }
                 )}
             ))
 

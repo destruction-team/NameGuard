@@ -17,7 +17,7 @@ data class AccessGroup(
     ) {
         fun test(string: String) =
             everything ||
-            string in nicknames ||
+            string.lowercase() in nicknames ||
             patterns.any { it.containsMatchIn(string) }
     }
 
