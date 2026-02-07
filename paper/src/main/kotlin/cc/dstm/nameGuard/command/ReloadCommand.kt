@@ -1,10 +1,10 @@
 package cc.dstm.nameGuard.command
 
+import cc.dstm.nameGuard.MainImpl
+import cc.dstm.nameGuard.util.runAsync
 import com.mojang.brigadier.Command
 import io.papermc.paper.command.brigadier.Commands
 import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents
-import cc.dstm.nameGuard.MainImpl
-import cc.dstm.nameGuard.util.runAsync
 
 @Suppress("UnstableApiUsage")
 object ReloadCommand {
@@ -19,8 +19,7 @@ object ReloadCommand {
             }
 
             plugin.runAsync {
-                plugin.whitelistConfig.loadFromDisk()
-                plugin.blockedConfig.loadFromDisk()
+                plugin.accessGroupsConfig.loadFromDisk()
                 ctx.source.sender.sendRichMessage("<green>Reloaded NameGuard")
             }
             return@executes Command.SINGLE_SUCCESS

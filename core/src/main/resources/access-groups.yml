@@ -1,0 +1,46 @@
+# <group-id>:
+#
+#   enabled: <true/false>
+#   log-to-console: <true/false>
+#   kick-message: <minimessage-string>
+#
+#   access-rules:
+#     - "ip:0.0.0.0"
+#     - "subnet:0.0.0.0/24"
+#     - "vhost:access.example.com"
+#
+#   match:
+#     everything: <true/false>
+#     nicknames:
+#       - "literal_name"
+#     # use https://regex101.com for debugging
+#     patterns:
+#       - "\Areg[e3]x_?pat{2}ern\z"
+
+bypass:
+  enabled: false
+  access-rules:
+    - "subnet:127.0.0.1/24"
+  match:
+    everything: true
+
+protection:
+  enabled: false
+  log-to-console: true
+  kick-message: "<red>Access denied"
+  access-rules:
+    - "vhost:a1WKKQAy95.access.myserver.com"
+    - "ip:192.168.1.120"
+  match:
+    nicknames:
+      - owner
+      - helper
+
+bad-words:
+  enabled: false
+  kick-message: "<red>Your nickname contains a bad word"
+  match:
+    patterns:
+      - "n[i1]gg?[e3a4]r?"
+      - "b[i1]tch"
+      - "fuck"

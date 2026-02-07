@@ -1,11 +1,10 @@
 package cc.dstm.nameGuard.listener
 
-import net.kyori.adventure.text.Component
+import cc.dstm.nameGuard.MainImpl
+import cc.dstm.nameGuard.types.ConnectionContext
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent
-import cc.dstm.nameGuard.MainImpl
-import cc.dstm.nameGuard.types.ConnectionContext
 
 class PreLoginListener(private val plugin: MainImpl) : Listener {
 
@@ -19,12 +18,12 @@ class PreLoginListener(private val plugin: MainImpl) : Listener {
             plugin
         )
 
-        val checkResult = connectionContext.isAllowed()
+        val blockingAccessGroup = plugin.accessGroupsConfig.getBlockingGroup(connectionContext)
 
-        if (!checkResult.isAllowed) {
+        if (blockingAccessGroup != null) {
             event.disallow(
                 AsyncPlayerPreLoginEvent.Result.KICK_OTHER,
-                checkResult.kickMessage ?: Component.empty()
+                blockingAccessGroup.kickMessage
             )
         }
     }

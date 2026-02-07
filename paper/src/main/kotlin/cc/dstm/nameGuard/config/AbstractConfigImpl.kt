@@ -1,7 +1,7 @@
 package cc.dstm.nameGuard.config
 
-import org.bukkit.configuration.file.YamlConfiguration
 import cc.dstm.nameGuard.MainImpl
+import org.bukkit.configuration.file.YamlConfiguration
 
 abstract class AbstractConfigImpl(private val plugin: MainImpl, val configName: String) : AbstractConfig(plugin, configName) {
 

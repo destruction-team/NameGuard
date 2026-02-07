@@ -9,6 +9,7 @@ interface PatternParser<T> {
 }
 
 sealed interface AccessRule {
+
     fun isAllowed(connection: ConnectionContext): Boolean
 
     data class IP(val address: InetAddress) : AccessRule {

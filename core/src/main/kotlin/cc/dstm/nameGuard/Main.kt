@@ -1,13 +1,11 @@
 package cc.dstm.nameGuard
 
-import cc.dstm.nameGuard.config.BlockedConfig
-import cc.dstm.nameGuard.config.WhitelistConfig
+import cc.dstm.nameGuard.config.AccessGroupsConfig
 import java.io.File
 
 interface Main {
 
-    val blockedConfig: BlockedConfig
-    val whitelistConfig: WhitelistConfig
+    val accessGroupsConfig: AccessGroupsConfig
 
     fun getDataFolder(): File
 

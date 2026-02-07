@@ -1,9 +1,9 @@
 package cc.dstm.nameGuard.config
 
+import cc.dstm.nameGuard.MainImpl
 import net.md_5.bungee.config.Configuration
 import net.md_5.bungee.config.ConfigurationProvider
 import net.md_5.bungee.config.YamlConfiguration
-import cc.dstm.nameGuard.MainImpl
 
 abstract class AbstractConfigImpl(private val plugin: MainImpl, configName: String) : AbstractConfig(plugin, configName) {
 
