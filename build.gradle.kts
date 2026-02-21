@@ -4,7 +4,7 @@ plugins {
 
 allprojects {
 
-    group = "cc.dstm"
+    group = "one.meza.envizar"
     version = "1.5.0"
 
     repositories {

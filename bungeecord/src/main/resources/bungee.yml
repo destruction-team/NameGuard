@@ -1,6 +1,6 @@
 name: NameGuard
 version: $version
-main: cc.dstm.nameGuard.MainImpl
+main: one.meza.envizar.nameGuard.MainImpl
 author: envizar
 
 libraries:

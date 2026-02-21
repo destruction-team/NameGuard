@@ -3,7 +3,7 @@ version: $version
 author: envizar
 
 api-version: '1.21'
-main: cc.dstm.nameGuard.MainImpl
+main: one.meza.envizar.nameGuard.MainImpl
 
 libraries:
   - "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
